@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from Ymatrix_clc import Ymatrix_clc
+from kin_dyn.regression.Ymatrix_clc import Ymatrix_clc
 from matlab_globals import colon
 
 

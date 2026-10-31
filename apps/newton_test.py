@@ -1,15 +1,14 @@
 import numpy as np
 
-from FN_clc import FN_clc
-from MDHTrans import MDHTrans
-from Ymatrix_withoutff import Ymatrix_withoutff
-from fn import fn
-from getAi import getAi
-from getHi import getHi
-from getInertia import getInertia
-from get_Yf_Yn import get_Yf_Yn
+from kin_dyn.FN_clc import FN_clc
+from kin_dyn.MDHTrans import MDHTrans
+from kin_dyn.regression.Ymatrix_withoutff import Ymatrix_withoutff
+from kin_dyn.fn import fn
+from kin_dyn.regression.getAi_Hi import getAi, getHi
+from kin_dyn.getInertia import getInertia
+from kin_dyn.regression.get_Yf_Yn import get_Yf_Yn
 from matlab_globals import G
-from motion_para_clc import motion_para_clc
+from kin_dyn.motion_para_clc import motion_para_clc
 
 
 def main():

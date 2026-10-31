@@ -1,11 +1,10 @@
 import numpy as np
 
-from MDHTrans import MDHTrans
-from getAi import getAi
-from getHi import getHi
-from get_Yf_Yn import get_Yf_Yn
+from kin_dyn.MDHTrans import MDHTrans
+from kin_dyn.regression.getAi_Hi import getAi, getHi   
+from kin_dyn.regression.get_Yf_Yn import get_Yf_Yn
 from matlab_globals import G
-from motion_para_clc import motion_para_clc
+from kin_dyn.motion_para_clc import motion_para_clc
 
 
 def Ymatrix_clc(q, dq, ddq):

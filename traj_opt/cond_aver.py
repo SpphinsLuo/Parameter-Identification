@@ -1,6 +1,6 @@
 import numpy as np
 
-from Ymatrix_clc import Ymatrix_clc
+from kin_dyn.regression.Ymatrix_clc import Ymatrix_clc
 from matlab_globals import colon
 
 
@@ -12,8 +12,8 @@ def cond_aver(x):
     ddq = np.zeros((6, len(t)))
 
     cond_aver_value = 0
-    print("x")
-    print(x)
+    # print("x")
+    # print(x)
 
     x = np.asarray(x, dtype=float).reshape(-1, order="F")
     for i in range(1, 7):
@@ -48,6 +48,6 @@ def cond_aver(x):
         cond_aver_value = cond_aver_value + np.max(s_B) / np.min(s_B)
         print(cond_aver_value)
 
-    print("cond_aver")
-    print(cond_aver_value)
+    # print("cond_aver")
+    # print(cond_aver_value)
     return cond_aver_value

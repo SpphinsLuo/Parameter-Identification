@@ -1,12 +1,11 @@
 import numpy as np
 from scipy.optimize import minimize
 
-from cond_aver import cond_aver
-from constr import constr
+from traj_opt.cond_aver import cond_aver
+from traj_opt.constr import constr
 
 
 def main():
-    # clc; clear
     x0 = 0.1 * np.ones(42)  # 6*7
     lb = -0.5 * np.ones(42)
     up = 0.5 * np.ones(42)
@@ -32,8 +31,18 @@ def main():
     x = result.x
     fval = result.fun
     # 显示结果
-    # disp('优化后的变量:');
-    # disp(x0);
+    print("===== 优化结果 =====")
+    print("最优变量 x:")
+    print(x)
+    print()
+    print("初始条件下的条件数 cond0:")
+    print(cond0)
+    print()
+    print("优化后的条件数cond_min:")
+    print(fval)
+    print()
+
+
     return x, fval, cond0
 
 

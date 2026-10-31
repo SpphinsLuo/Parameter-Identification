@@ -4,8 +4,7 @@ from datetime import date
 import numpy as np
 import matplotlib.pyplot as plt
 
-from Leftleg import Leftleg
-from Rightleg import Rightleg
+from kin_dyn.j2m import Leftleg, Rightleg
 from matlab_globals import colon
 
 
@@ -74,7 +73,8 @@ def main():
     # 写入文件夹
     q_left = np.asarray(q_left, dtype=float).reshape(-1)
     q_right = np.asarray(q_right, dtype=float).reshape(-1)
-    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Logs")
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_dir = os.path.join(project_root, "Logs")
     os.makedirs(out_dir, exist_ok=True)
     out_name = os.path.join(out_dir, "bianshiguiji_%s.txt" % date.today().strftime("%Y%m%d"))
     with open(out_name, "w") as fid:

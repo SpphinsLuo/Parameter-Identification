@@ -1,6 +1,6 @@
 import numpy as np
 
-from getS import getS
+from kin_dyn.regression.math import getS
 
 
 def get_Yf_Yn(id, R, H, A, Yf_next, Yn_next, Po):

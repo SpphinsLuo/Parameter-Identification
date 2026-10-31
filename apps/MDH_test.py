@@ -1,6 +1,6 @@
 import numpy as np
 
-from MDHTrans import MDHTrans
+from kin_dyn.MDHTrans import MDHTrans
 
 
 def main():
@@ -30,7 +30,22 @@ def main():
     T56 = MDHTrans(alpha[5], a[5], d[5], q[5])
     T67 = MDHTrans(alpha[6], a[6], d[6], q[6])
 
+    # ---------- 打印所有单个 T 矩阵 ----------
+    np.set_printoptions(precision=4, suppress=True)
+    T_list = [("T01", T01), ("T12", T12), ("T23", T23),
+              ("T34", T34), ("T45", T45), ("T56", T56), ("T67", T67)]
+    for name, mat in T_list:
+        print(f"===== {name} =====")
+        print(mat)
+        print()
+
     T = T01 @ T12 @ T23 @ T34 @ T45 @ T56 @ T67
+
+    # ---------- 打印最终 T 矩阵 ----------
+    print("===== T07 =====")
+    print(T)
+    print()
+
     return T
 
 
